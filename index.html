@@ -3,40 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>私のウェブサイト</title>
+    <title>ポケモンゲーム</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>ようこそ</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- スタート画面 -->
+    <div class="start-screen" id="startScreen">
+        <h1>ポケモン探しゲーム</h1>
+        <p>隠れているポケモンを探して見つけよう！</p>
+        <button id="startButton">ポケモン探し</button>
+        <button id="mathGameButton">たしざんゲーム</button>
+        <button id="multiplicationGameButton">かけざんゲーム</button>
+    </div>
 
-    <main>
-        <section id="about">
-            <h2>About</h2>
-            <p>ここに自己紹介やサイトの説明を書きます。</p>
-        </section>
+    <!-- ポケモン探しゲーム -->
+    <div class="game-container" id="pokemonGameContainer">
+        <header>
+            <h1>ポケモン探しゲーム</h1>
+            <div class="score-container">
+                <span>スコア: <span id="score">0</span></span>
+                <span>タイム: <span id="timer">0</span>秒</span>
+            </div>
+        </header>
+        <div class="game-area"></div>
+        <div id="message"></div>
+    </div>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <p>プロジェクトの紹介をここに書きます。</p>
-        </section>
+    <!-- 足し算ゲーム -->
+    <div id="mathGameContainer" class="game-container" style="display: none;">
+        <header>
+            <h1>たしざんゲーム</h1>
+            <div class="score-container">
+                <span>問題: <span id="mathQuestion">0</span>/10</span>
+                <span id="mathTimer">時間: 0秒</span>
+            </div>
+        </header>
+        <div class="math-game-area">
+            <div id="mathMessage" class="message"></div>
+            <div id="numberPanels" class="panels-container"></div>
+        </div>
+    </div>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>連絡先情報をここに書きます。</p>
-        </section>
-    </main>
+    <!-- 掛け算ゲーム -->
+    <div class="game-container" id="multiplicationGameContainer">
+        <header>
+            <h1>掛け算ゲーム</h1>
+            <div class="score-container">
+                <span>問題: <span id="multiplicationQuestion">0</span>/10</span>
+                <span>時間: <span id="multiplicationTimer">0</span>秒</span>
+            </div>
+        </header>
+        <div class="math-game-area">
+            <div id="multiplicationMessage" class="message"></div>
+        </div>
+    </div>
 
-    <footer>
-        <p>&copy; 2024 私のウェブサイト</p>
-    </footer>
+    <!-- クリア画面 -->
+    <div class="clear-screen" id="clearScreen">
+        <h1>クリア！</h1>
+        <p>クリアタイム: <span id="clearTime">0</span>秒</p>
+        <button id="restartButton">もう一度プレイ</button>
+        <button class="returnButton">メニューに戻る</button>
+    </div>
+
+    <div id="mathClearScreen" class="clear-screen" style="display: none;">
+        <h2>クリア！</h2>
+        <p>クリアタイム: <span id="mathClearTime"></span>秒</p>
+        <button id="mathRestartButton">もう一度プレイ</button>
+        <button id="mathBackToTitle">タイトルに戻る</button>
+    </div>
+
+    <div class="clear-screen" id="multiplicationClearScreen">
+        <h1>クリア！</h1>
+        <p>クリアタイム: <span id="multiplicationClearTime">0</span>秒</p>
+        <button id="multiplicationRestartButton">もう一度プレイ</button>
+        <button class="returnButton">メニューに戻る</button>
+    </div>
+
+    <script src="game.js"></script>
+    <script src="mathGame.js"></script>
+    <script src="multiplicationGame.js"></script>
 </body>
 </html> 
